@@ -17,6 +17,8 @@ def process_order(order, stock, prices, is_member):
             return None
         if stock[name] < order[name]:
             return None
+        if order[name] <= 0:
+            return None                      # D-01, D-02: кількість має бути додатною
         total = total + prices[name] * order[name]
     final = calc_discount(total, is_member)
     for name in order:

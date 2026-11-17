@@ -30,7 +30,7 @@ class ScenarioTests(unittest.TestCase):
         stock = fresh_stock()
         first = shop.process_order(
             {"Конфети": 3, "Торт": 2}, stock, PRICES, True)               # 680.8
-        second = shop.process_order({"Шоколад": 4}, stock, PRICES, True)  # 312.8
+        second = shop.process_order({"Шоколад": 4}, stock, PRICES, True)  # 329.8
         self.assertEqual(first, 680.8)
         self.assertEqual(second, 329.8)
         self.assertEqual(stock, {"Конфети": 47, "Торт": 18, "Шоколад": 96})
